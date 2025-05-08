@@ -44,3 +44,21 @@ function isLegal(a:number):boolean{
         return false
     }
 }
+
+
+/**
+ * Problem 4 - 
+Create a function that takes another function as input, and runs it after 1 second.
+ */
+function lala(a:string):string{
+    return a
+}
+function delayedCall(lala:()=>void){
+    setTimeout(() => {
+        return lala
+    }, 1000);
+}
+delayedCall(()=>lala('sanjana'))
+
+
+const greet=(name:string)=>`hello, ${name}`

@@ -27,3 +27,29 @@ function sum(a, b) {
     return a + b;
 }
 console.log(sum(2, 3));
+//the number before the return denotes that, the return statment only return number
+//and if not the TS throw an error
+/**Problem 3
+  Return true or false based on if a user is 18+ */
+function isLegal(a) {
+    if (a > 18) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+/**
+ * Problem 4 -
+Create a function that takes another function as input, and runs it after 1 second.
+ */
+function lala(a) {
+    return a;
+}
+function delayedCall(lala) {
+    setTimeout(() => {
+        return lala;
+    }, 1000);
+}
+delayedCall(() => lala('sanjana'));
+const greet = (name) => `hello, ${name}`;
