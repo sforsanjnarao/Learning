@@ -53,7 +53,7 @@ Create a function that takes another function as input, and runs it after 1 seco
 function lala(a:string):string{
     return a
 }
-function delayedCall(lala:()=>void){
+function delayedCall(lala:Function){
     setTimeout(() => {
         return lala
     }, 1000);
@@ -61,4 +61,20 @@ function delayedCall(lala:()=>void){
 delayedCall(()=>lala('sanjana'))
 
 
-const greet=(name:string)=>`hello, ${name}`
+// const greet=(name:string)=>`hello, ${name}`
+
+interface User{
+    firstName:string;
+    lastName:string;
+    email:string;
+    age:number;
+}
+function isLegalObj(user:User){
+    if(user.age>18) return true
+    else return false;
+}
+
+interface ToDo{
+    task:string;
+    taskStatus:boolean
+}
