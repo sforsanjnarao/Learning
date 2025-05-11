@@ -37,13 +37,13 @@ console.log(sum(2,3))
 /**Problem 3 
   Return true or false based on if a user is 18+ */
 
-function isLegal(a:number):boolean{
-    if(a>18){
-        return true
-    }else{
-        return false
-    }
-}
+// function isLegal(a:number):boolean{
+//     if(a>18){
+//         return true
+//     }else{
+//         return false
+//     }
+// }
 
 
 /**
@@ -63,18 +63,45 @@ delayedCall(()=>lala('sanjana'))
 
 // const greet=(name:string)=>`hello, ${name}`
 
-interface User{
-    firstName:string;
-    lastName:string;
-    email:string;
-    age:number;
-}
-function isLegalObj(user:User){
-    if(user.age>18) return true
-    else return false;
-}
+// interface User{
+//     firstName:string;
+//     lastName:string;
+//     email:string;
+//     age:number;
+// }
+// function isLegalObj(user:User){
+//     if(user.age>18) return true
+//     else return false;
+// }
 
 interface ToDo{
     task:string;
     taskStatus:boolean
 }
+
+interface User {
+    name:string
+    age:number
+    address?:{   //question mark shows it's an optional feild
+        city:string;
+        country:string;
+        pincode:number
+    }
+
+}
+let user:User={
+    name:"sanjana",
+    age:20,
+    address:{
+        city:'ranchi',
+        country:'india',
+        pincode:496001
+    }
+}
+function isLegal(user:User):boolean{
+    return user.age<18
+}
+console.log(isLegal(user)) //this is giving me false wao without using any condition
+
+
+//one interface can use another interface

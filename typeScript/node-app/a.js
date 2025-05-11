@@ -31,14 +31,13 @@ console.log(sum(2, 3));
 //and if not the TS throw an error
 /**Problem 3
   Return true or false based on if a user is 18+ */
-function isLegal(a) {
-    if (a > 18) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
+// function isLegal(a:number):boolean{
+//     if(a>18){
+//         return true
+//     }else{
+//         return false
+//     }
+// }
 /**
  * Problem 4 -
 Create a function that takes another function as input, and runs it after 1 second.
@@ -52,4 +51,16 @@ function delayedCall(lala) {
     }, 1000);
 }
 delayedCall(() => lala('sanjana'));
-const greet = (name) => `hello, ${name}`;
+let user = {
+    name: "sanjana",
+    age: 20,
+    address: {
+        city: 'ranchi',
+        country: 'india',
+        pincode: 496001
+    }
+};
+function isLegal(user) {
+    return user.age < 18;
+}
+console.log(isLegal(user));
