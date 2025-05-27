@@ -13,6 +13,9 @@ export default Counter
 
 function Counting(){
     const [count, setCount]=useState(0)
+    // setInterval(()=>{
+    //     setCount(count+1)
+    // },1000)
     return(
         <div>
             <div>
