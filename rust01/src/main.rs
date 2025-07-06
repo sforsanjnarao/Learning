@@ -1,9 +1,11 @@
+use std::char;
+
 fn main() {
     println!("Hello, world!");
     let x:i8=20;
     let y:i8=21;
     let z:f64=1000.01;
-    println!("x:{}, y:{}, z:{}", x, y,z);
+    println!("x:{}, y:{}, z:{}", x, y, z);
 
     let is_male:bool=false;
     let is_above_18:bool=true;
@@ -16,6 +18,15 @@ fn main() {
 
     if is_male && is_above_18 {
         println!("you are an actulle adult")
+    }
+
+    let greeting: String= String::from("whole hello world");
+    println!("{}", greeting);
+
+    let char1=greeting.chars().nth(5);
+    match char1{
+        Some(c )=>println!("{}", c),
+        None=>println!("no character in this index")
     }
 
 
