@@ -1,6 +1,22 @@
-use std::char;
+// use std::char;
+
+struct User{
+    username:String,
+    active: bool,
+    email: String,
+    sign_in_count: u64
+}
 
 fn main() {
+    let user1=User{
+        active:true,
+        username:String::from("sanjana"),
+        email:String::from("sanjana@gmail.com"),
+        sign_in_count:1
+
+    };
+    println!("User 1st username: {:?}",user1.username);    //User 1st username: "sanjana"
+
     println!("Hello, world!");
     let x:i8=20;
     let y:i8=21;
