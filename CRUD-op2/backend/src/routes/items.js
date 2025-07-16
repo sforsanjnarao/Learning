@@ -1,17 +1,21 @@
 import { Router } from "express";
 import itemModel from "../model/item.js";
 
-const router= Router()
+let router= Router()
 router.get('/', async(req,res)=>{
-    const blog= await itemModel.find()
+    let blog= await itemModel.find()
     return res.json({blog})
 })
 
 router.post('/create', async (req,res)=>{
-        const {title, content}=req.body
-        if(!title || !content) console.log('empty field')
+        let {title, content}=req.body
+            if(!title || !content) {
+                return res.status(400).json({
+                    "message":"Empty fields"
+                })
+            }
     try {
-        const newPost=itemModel.create({
+        let newPost=itemModel.create({
              title,
              content
         })
@@ -22,8 +26,26 @@ router.post('/create', async (req,res)=>{
     }
 })
 
-router.patch('/update',)
+router.patch('/update/:id',async (res,req)=>{
+    let {id}=req.params
+    let {title, content}= req.body
+    if(!id|| !title || !content){
+        return res.status(400).json({message: 'all field needed'})
+    }
+    try{
+        let updateBlog= awaititemModel.findByIdAndUpdate(id, {title,content})
+        res.status(200).json({updateBlog})
+    }catch(err){
+        console.error('Error:',err)
+        return res.status(400).json({'Error': err.message})
+    }
+    
+})
 
-router.delete('/delete,')
+router.delete('/delete/:id', async (req,res)=>{
+    let {id}=req.params
+    let deleteBlog=await itemModel.findByIdAndDelete(id)
+    res.status(200).json({deleteBlog})
+})
 
 export default router
