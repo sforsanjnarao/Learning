@@ -1,9 +1,16 @@
 import mongoose from "mongoose";
 
-const schema=mongoose.Schema({
-    name:{
+const schema= new mongoose.Schema({
+    title:{
         type: String,
         require: true
+    },
+    content:{
+        type: String
+    },
+    createdAt:{
+        type: Date,
+        default: Date.now
     }
 })
 
