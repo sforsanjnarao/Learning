@@ -8,5 +8,8 @@ const todoSchema=new mongoose.Schema({
     checked:{
         type: Boolean,
     },
-    
+
 })
+
+const todoModel=('Todo', todoSchema)
+export default todoModel
