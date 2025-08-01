@@ -6,6 +6,7 @@ import Counter from './Counter'
 import Interval from './Interval'
 import { BrowserRouter } from 'react-router-dom'
 import Routeing from './components/Routeing'
+import InputFocus from './components/InputFocus'
 
 function App() {
   // let [countVisible,setCountVisible]=useState(true)
@@ -22,9 +23,10 @@ function App() {
     //   {/* <Interval/> */}
 
     // </div>
-    <BrowserRouter>
-      <Routeing/>
-    </BrowserRouter>
+    // <BrowserRouter>
+    //   <Routeing/>
+    // </BrowserRouter>
+    <InputFocus/>
   )
 }
 
