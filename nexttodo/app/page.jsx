@@ -1,10 +1,16 @@
-
-
-import React from 'react'
+'use Client'
+import React, { useState } from 'react'
 
 const page = () => {
+  const [task, setTask]=useState('')
+  const handelAddButton=()=>{
+    
+  }
   return (
-    <div>page</div>
+    <div>
+      <input type="text" placeholder='Enter the task'/>
+      <button onClick={()=>handelAddButton}>ADD</button>
+    </div>
   )
 }
 
